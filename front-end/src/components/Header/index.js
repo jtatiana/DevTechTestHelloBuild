@@ -1,18 +1,25 @@
 import { NavLink } from 'react-router-dom'
-import AuthService from '../../services/Auth/AuthService'
+//material ui
 import { Card, Container, AppBar, Toolbar, Button, Typography, Grid, IconButton } from '@mui/material';
 import ListIcon from '@mui/icons-material/List';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+// Services
+import AuthService from '../../services/Auth/AuthService'
+// Router
+import AppRouting from '../../routes/routes'
 
-const Header = ({ PrivateRouting }) => {
-
+const Header = () => {
   const handleLogout = () => {
     AuthService.logOut()
   }
+  const privateRouting = AppRouting.filter((repo) => {
+    return repo.isPrivate != null
+  })
+
   return (
     <>
       <AppBar position="static">
-        < Toolbar >
+        <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Dev Tech Test
           </Typography>
@@ -23,8 +30,8 @@ const Header = ({ PrivateRouting }) => {
         <Card sx={{ minWidth: 275, padding: 4 }}>
           <Grid container spacing={1} >
             <Grid item xs>
-              {PrivateRouting.map(child => {
-                return (child.isAvailableToNav &&
+              {privateRouting.map(child => {
+                return ((child.isPrivate != false) && child.isAvailableToNav &&
                   <NavLink key={`nav-${child.path}`
                   } to={child.to}>
                     <IconButton aria-label="Example">
@@ -37,7 +44,7 @@ const Header = ({ PrivateRouting }) => {
             </Grid>
           </Grid>
         </Card>
-      </Container >
+      </Container>
     </>
   )
 }

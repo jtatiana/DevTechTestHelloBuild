@@ -2,7 +2,7 @@ import { useContext } from 'react'
 // material ui
 import { List } from '@mui/material'
 // pages
-import { DataContext } from '../../pages/Respositories/index'
+import { DataContext } from '../../pages/Repositories/index'
 // Components
 import ItemList from '../ItemList/index'
 

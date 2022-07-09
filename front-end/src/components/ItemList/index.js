@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 //pages
-import { DataContext } from '../../pages/Respositories/index'
+import { DataContext } from '../../pages/Repositories/index'
 // material ui
 import { ListItemButton, ListItem, ListItemText } from '@mui/material';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -16,7 +16,7 @@ const ItemList = ({ repo }) => {
   return (
     <ListItem
       key={repo.id}
-      disableGutters
+      disablePadding
       secondaryAction={
         <IconButton onClick={() => toggleFav(repo?.id)}>
           {repo?.isFavorite ?
@@ -24,8 +24,10 @@ const ItemList = ({ repo }) => {
         </IconButton>
       }
     >
-      <ListItemText primary={repo?.name ?? 'Name not available'} />
-      <ListItemText primary={repo?.description ?? 'Description not available'} />
+      <ListItemText
+        primary={repo?.name ?? 'Name not available'}
+        secondary={repo?.description ?? 'Description not available'}
+      />
     </ListItem>
   )
 }

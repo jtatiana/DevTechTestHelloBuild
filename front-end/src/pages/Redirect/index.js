@@ -1,5 +1,7 @@
 import { useEffect } from 'react'
+// Router
 import { useSearchParams, useNavigate } from 'react-router-dom'
+// services
 import AlertService from '../../services/Alerts/AlertsService'
 import AuthService from '../../services/Auth/AuthService'
 

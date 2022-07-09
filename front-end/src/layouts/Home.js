@@ -1,9 +1,10 @@
 
 import { ApolloProvider } from '@apollo/client'
 import { Navigate } from 'react-router-dom'
+// Services
 import AuthService from '../services/Auth/AuthService'
 import GraphQLService from '../services/GraphQL/GraphQLService'
-import PrivateRouting from '../routes'
+// Components
 import Header from '../components/Header/index'
 import Content from '../components/Content/index'
 
@@ -14,8 +15,8 @@ export const LazyLayout = () => {
   return (
     <ApolloProvider client={GraphQLService}>
       <>
-        <Header PrivateRouting={PrivateRouting} />
-        <Content PrivateRouting={PrivateRouting} />
+        <Header />
+        <Content />
       </>
     </ApolloProvider>
   )

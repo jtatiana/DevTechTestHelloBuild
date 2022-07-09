@@ -1,8 +1,13 @@
 
 import { useEffect, useState } from 'react'
-import { Navigate, Routes, Route } from 'react-router-dom'
-import { Container, Card } from '@mui/material';
+// apollo
 import { useQuery, gql } from '@apollo/client'
+// material ui
+import { Container, Card } from '@mui/material';
+// Router
+import { Navigate, Routes, Route } from 'react-router-dom'
+import AppRouting from '../../routes/routes'
+
 const QUERY = gql`
 {
   viewer {
@@ -33,7 +38,7 @@ const mapRepos = (repos) => {
     }
   })
 }
-const Content = ({ PrivateRouting }) => {
+const Content = () => {
   const [dataChildren, setData] = useState({})
   const { data, loading, error } = useQuery(
     QUERY,
@@ -64,10 +69,15 @@ const Content = ({ PrivateRouting }) => {
         </Card>
       </Container>)
   }
+
+  const privateRouting = AppRouting.filter((repo) => {
+    return repo.isPrivate != null
+  })
+
   return (
     <Routes>
-      {PrivateRouting.map(route => {
-        return (<Route path={route.path} key={`route-${route.path}`} element={<route.Component>{dataChildren}</route.Component>} />)
+      {privateRouting.map(route => {
+        return ((route.isPrivate = true) && <Route path={route.path} key={`route-${route.path}`} element={<route.Component>{dataChildren}</route.Component>} />)
       })}
 
       <Route path='*' element={<Navigate replace to='profile' />} />

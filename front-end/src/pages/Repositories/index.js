@@ -5,9 +5,10 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import Favorite from '@mui/icons-material/Favorite';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-// Services
+// components
 import InformationList from '../../components/InformationList/index'
 import Search from '../../components/Search'
+// Services
 import storageService from '../../services/Storage/StorageService'
 
 export const DataContext = createContext({ lists: [], toggleFav: () => { } })
