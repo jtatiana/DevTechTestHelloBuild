@@ -32,16 +32,11 @@ const verifyToken = (req, res, next) => {
         .send({ message: 'No tiene permiso para realizar esta operación.' })
     }
     const now = moment()
-    // const diaD = moment('20200920', 'YYYYMMDD')
-    // if (diaD.unix() < now.unix()) {
-    //   return res.status(401).send({ message: 'Error no controlado.' })
-    // }
     if (payload.exp < now.unix()) {
       return res.status(401).send({ message: 'El token ha expirado.' })
     }
     next()
   } catch (error) {
-    // console.log('Hubo un error verificando el token: ', error)
     return res
       .status(401)
       .send({

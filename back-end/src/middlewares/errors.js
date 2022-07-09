@@ -1,6 +1,5 @@
 'use strict'
 import { logger } from '../services/log.service.js'
-// import { ValidationError } from 'express-validation'
 
 const errorMiddleware = (error, req, res, next) => {
   try { // Verificamos si es parseable a object
@@ -23,13 +22,3 @@ const errorMiddleware = (error, req, res, next) => {
 }
 
 export { errorMiddleware }
-// const isParseableError = (error) => {
-//   let parseable = true
-//   try {
-//     JSON.parse(error)
-//   } catch (e) {
-//     // console.log(e)
-//     parseable = false
-//   }
-//   return parseable
-// }

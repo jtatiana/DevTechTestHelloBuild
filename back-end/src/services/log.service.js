@@ -1,4 +1,3 @@
-// import winston from 'winston'
 const { createLogger, format, transports } = require('winston')
 const logger = createLogger({
   level: 'info',
@@ -12,10 +11,6 @@ const logger = createLogger({
     format.printf(info => `[${info.timestamp}][${info.level}]: ${info.message}`)
   ),
   transports: [
-    //
-    // - Write to all logs with level `info` and below to `quick-start-combined.log`.
-    // - Write all logs error (and below) to `quick-start-error.log`.
-    //
     new transports.File({
       filename: getErrorLogPath(),
       level: 'error',
@@ -29,16 +24,13 @@ const logger = createLogger({
     })
   ]
 })
-function getErrorLogPath () {
+function getErrorLogPath() {
   return `logs/${process.env.NODE_ENV}/error.log`
 }
-function getCombinedLogPath () {
+function getCombinedLogPath() {
   return `logs/${process.env.NODE_ENV}/error.log`
 }
-//
-// If we're not in production then **ALSO** log to the `console`
-// with the colorized simple format.
-//
+
 if (process.env.NODE_ENV !== 'production') {
   logger.add(
     new transports.Console({
