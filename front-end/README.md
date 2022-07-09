@@ -6,7 +6,7 @@
 
 In the terminal, locate yourself in the folder that was created
 
-> $ cd dev-tech-test
+> $ cd DevTechTestHelloBuild
 
 Proceed to run the following command to install all the necessary dependencies for the project to work
 
