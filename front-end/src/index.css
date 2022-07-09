@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
+
+body {
+  min-height: 100vh;
+  display: flex;
+  font-weight: 400;
+  font-family: "Fira Sans", sans-serif;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+span {
+  font-weight: 500;
+  font-family: "Fira Sans", sans-serif;
+}
+
+body,
+html,
+.App,
+#root{
+  width: 100%;
+  height: 100%;
+}
+
+.auth-inner {
+  background: linear-gradient(-15deg, #f89779, #fdb8d2, #0d6efd, #a4f1df);
+  background-size: 400% 400%;
+  display: grid;
+  grid-template-columns: 1fr minmax(200px, 400px) 1fr;
+  grid-template-rows: 1fr minmax(auto, 1fr) 1fr;
+  grid-gap: 10px;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.auth-wrapper h3 {
+  text-align: center;
+  margin: 0;
+  line-height: 1;
+  padding-bottom: 20px;
+}

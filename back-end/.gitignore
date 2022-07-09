@@ -1,0 +1,11 @@
+node_modules/
+.vscode/
+dist/
+*.xlsx
+.env
+*.env
+env/
+logs/
+logs/*.log
+src/connection/config/config.json
+package-lock.json
