@@ -14,10 +14,9 @@ Proceed to run the following command to install all the necessary dependencies f
 
 Database configuration (this backend is used by PostgreSQL)
    - Create a Database in Postgres
-  - Generate Database tables
-    - Generate config file (use example "config.json.example" file)
+   - Generate config file (use example "config.json.example" file)
    - Configure Database credentials on src/connection/config/config.json
-   - To create the Database, run:
+   - Create the tables, run:
       - windows 
          - npm run db
       - Different operating systems (OS)
