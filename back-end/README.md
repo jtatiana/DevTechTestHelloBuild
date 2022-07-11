@@ -19,7 +19,7 @@ Database configuration (this backend is used by PostgreSQL)
    - Configure Database credentials on src/connection/config/config.json
     - windows 
       - npm run db
-    - different operating systems (OS)
+   - Different operating systems (OS)
       - cd src/connection
       - npx sequelize-cli db:migrate
 
