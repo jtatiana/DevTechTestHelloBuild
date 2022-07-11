@@ -17,11 +17,12 @@ Database configuration (this backend is used by PostgreSQL)
   - Generate Database tables
     - Generate config file (use example "config.json.example" file)
    - Configure Database credentials on src/connection/config/config.json
-    - windows 
-      - npm run db
-   - Different operating systems (OS)
-      - cd src/connection
-      - npx sequelize-cli db:migrate
+   - To create the database, run:
+      - windows 
+         - npm run db
+      - Different operating systems (OS)
+         - cd src/connection
+         - npx sequelize-cli db:migrate
 
 ### Getting Started
 
