@@ -13,15 +13,15 @@ Proceed to run the following command to install all the necessary dependencies f
 > $ npm install
 
 Database configuration (this backend is used by PostgreSQL)
-   - Create a DB in Postgres
-  - Generate DB tables
-    - config file (use config.json.example)
-   - Configure DB credentials on src/connection/config/config.json
+   - Create a Database in Postgres
+  - Generate Database tables
+    - Generate config file (use example "config.json.example" file)
+   - Configure Database credentials on src/connection/config/config.json
     - windows 
-      > npm run db
-    - other OS
-      >cd src/connection
-      >npx sequelize-cli db:migrate
+      - npm run db
+    - different operating systems (OS)
+      - cd src/connection
+      - npx sequelize-cli db:migrate
 
 ### Getting Started
 
